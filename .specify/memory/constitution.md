@@ -1,55 +1,76 @@
-# [PROJECT_NAME] Constitution
+<!-- Sync Impact Report
+Version change:  → 1.0.0
+Modified principles:
+  - [PRINCIPLE_1_NAME] → I. Accuracy
+  - [PRINCIPLE_2_NAME] → II. Clarity
+  - [PRINCIPLE_3_NAME] → III. Practicality
+  - [PRINCIPLE_4_NAME] → IV. Reproducibility
+  - [PRINCIPLE_5_NAME] → V. Consistency
+Added sections:
+Removed sections: PRINCIPLE_6_NAME, [PRINCIPLE__DESCRIPTION]
+Templates requiring updates:
+  - .specify/templates/plan-template.md ⚠ pending
+  - .specify/templates/spec-template.md ⚠ pending
+  - .specify/templates/tasks-template.md ⚠ pending
+Follow-up TODOs: none
+-->
+# AI/Spec-Driven Book Creation using Spec-Kit Plus, Claude Code, Docusaurus, and GitHub Pages Constitution
 <!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Accuracy
+Accuracy from official and trusted sources
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Clarity
+Clear, beginner-friendly explanations
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Practicality
+Practical, step-by-step implementation
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Reproducibility
+Reproducible results
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Consistency
+Consistency across all chapters
 
-### [PRINCIPLE_6_NAME]
+## Key Standards
 
+- All technical claims must be verified
+- Code must be tested or logically valid
+- Simple, instructional writing style
+- Follow Docusaurus and GitHub best practices
+- Real usage of Claude Code and Spec-Kit Plus
 
-[PRINCIPLE__DESCRIPTION]
+## Constraints & Requirements
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+**Constraints:**
+- Format: Docusaurus website
+- Deployment: GitHub Pages
+- Language: Simple professional English
+- Clean, commented, beginner-friendly code
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+**Structure requirements:**
+- Clear objectives per chapter
+- Step-by-step setup
+- Troubleshooting section
+- Hands-on examples
+- Chapter summary
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+**AI usage rules:**
+- Claude Code for coding assistance
+- Spec-Kit Plus for specifications
+- All AI output must be reviewed
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Success criteria:**
+- Book builds successfully
+- Website deploys on GitHub Pages
+- All steps work for beginners
+- No broken commands or links
+- Project is clean and shareable
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Constitution supersedes all other practices; Amendments require documentation, approval, and a migration plan.
+All PRs/reviews must verify compliance; Complexity must be justified.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-07 | **Last Amended**: 2025-12-07
