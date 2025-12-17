@@ -1,0 +1,36 @@
+{
+  "name": "physical-ai-robotics-book",
+  "version": "1.0.0",
+  "description": "A comprehensive textbook on Physical AI Robotics: From Foundations to Advanced Applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd docusaurus && npm start",
+    "build": "cd docusaurus && npm run build",
+    "serve": "cd docusaurus && npm run serve",
+    "deploy": "cd docusaurus && npm run deploy"
+  },
+  "keywords": [
+    "robotics",
+    "ai",
+    "textbook",
+    "docusaurus",
+    "ros2",
+    "simulation",
+    "nvidia-isaac",
+    "vision-language-action"
+  ],
+  "author": "Physical AI Robotics Textbook Project",
+  "license": "CC-BY-NC-SA-4.0",
+  "devDependencies": {
+    "@docusaurus/core": "3.0.0",
+    "@docusaurus/preset-classic": "3.0.0",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}
