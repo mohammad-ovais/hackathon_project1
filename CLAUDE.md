@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- JavaScript/TypeScript, Node.js 18+ + Docusaurus v3, React, Node.js, GitHub Pages (001-physical-ai-robotics-book)
+- Git repository, static site generation (001-physical-ai-robotics-book)
+
+## Recent Changes
+- 001-physical-ai-robotics-book: Added JavaScript/TypeScript, Node.js 18+ + Docusaurus v3, React, Node.js, GitHub Pages
