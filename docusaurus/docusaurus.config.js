@@ -1,25 +1,37 @@
 // @ts-check
-// `@type` JSDoc annotations allow IDEs and type-checking tools to autocomplete
-// and validate function arguments and return values, enhancing code quality.
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
+
+import {themes as prismThemes} from 'prism-react-renderer';
+
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Physical AI Robotics: From Foundations to Advanced Applications',
-  tagline: 'A comprehensive textbook on robotics, AI, and autonomous systems',
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
-  url: 'https://physical-ai-robotics-book.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub Pages, this is usually '/<organization-name>/<repository-name>/'
-  baseUrl: '/physical-ai-robotics-book/',
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  },
 
+  // Set the production url of your site here
+  url: 'https://mohammad-ovais.github.io',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/hackathon_project1/',
+  trailingSlash: false, 
+  
   // GitHub pages deployment config.
-  organizationName: 'physical-ai-robotics-book', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-robotics-book', // Usually your repo name.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'mohammad-ovais', // Usually your GitHub org/user name.
+  projectName: 'hackathon_project1', // Usually your repo name.
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -39,9 +51,23 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/physical-ai-robotics-book/physical-ai-robotics-book/tree/main/docusaurus/',
+            'https://github.com/mohammad-ovais/hackathon_project1/tree/main/docusaurus/',
         },
-        blog: false, // Disable blog for textbook
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/mohammad-ovais/hackathon_project1/tree/main/docusaurus/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -54,21 +80,25 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
       navbar: {
-        title: 'Physical AI Robotics Textbook',
+        title: 'My Site',
         logo: {
-          alt: 'Physical AI Robotics Logo',
+          alt: 'My Site Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'textbookSidebar',
+            sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Textbook',
+            label: 'Tutorial',
           },
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/physical-ai-robotics-book/physical-ai-robotics-book',
+            href: 'https://github.com/mohammad-ovais/hackathon_project1',
             label: 'GitHub',
             position: 'right',
           },
@@ -78,23 +108,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Textbook',
+            title: 'Docs',
             items: [
               {
-                label: 'Module 1: The Robotic Nervous System (ROS 2)',
-                to: '/docs/module-1/intro',
-              },
-              {
-                label: 'Module 2: The Digital Twin (Gazebo & Unity)',
-                to: '/docs/module-2/intro',
-              },
-              {
-                label: 'Module 3: The AI-Robot Brain (NVIDIA Isaac)',
-                to: '/docs/module-3/intro',
-              },
-              {
-                label: 'Module 4: Vision-Language-Action (VLA)',
-                to: '/docs/module-4/intro',
+                label: 'Tutorial',
+                to: '/docs/intro',
               },
             ],
           },
@@ -110,8 +128,8 @@ const config = {
                 href: 'https://discordapp.com/invite/docusaurus',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'X',
+                href: 'https://x.com/docusaurus',
               },
             ],
           },
@@ -119,19 +137,23 @@ const config = {
             title: 'More',
             items: [
               {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
                 label: 'GitHub',
-                href: 'https://github.com/physical-ai-robotics-book/physical-ai-robotics-book',
+                href: 'https://github.com/mohammad-ovais/hackathon_project1',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI Robotics Textbook. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/github'),
-        darkTheme: require('prism-react-renderer/themes/dracula'),
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
     }),
 };
 
-module.exports = config;
+export default config;

@@ -2,63 +2,46 @@
 sidebar_position: 1
 ---
 
-# Physical AI Robotics: From Foundations to Advanced Applications
+# Tutorial Intro
 
-## Welcome to the Textbook
+Let's discover **Docusaurus in less than 5 minutes**.
 
-Welcome to "Physical AI Robotics: From Foundations to Advanced Applications," a comprehensive textbook designed for advanced undergraduate and graduate students, researchers, and professionals seeking to understand the intersection of artificial intelligence and robotics.
+## Getting Started
 
-This textbook offers a comprehensive exploration of the theoretical underpinnings and practical applications of artificial intelligence in robotics. You'll learn fundamental concepts such as kinematics, dynamics, control systems, and perception, progressing to advanced topics in machine learning, deep reinforcement learning, and ethical considerations in AI robotics.
+Get started by **creating a new site**.
 
-### Learning Outcomes
+Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
 
-Upon completion of this textbook, you will be able to:
+### What you'll need
 
-- **LO-001**: Comprehend the foundational principles of robotics, including kinematics, dynamics, and control, as applied to AI systems.
-- **LO-002**: Apply various AI techniques, such as machine learning and deep learning, to solve complex problems in robotic perception, navigation, and manipulation.
-- **LO-003**: Design and implement intelligent robotic systems capable of autonomous decision-making and interaction within dynamic environments.
-- **LO-004**: Evaluate and select appropriate sensors, actuators, and computational platforms for specific robotic applications.
-- **LO-005**: Analyze the ethical implications and societal impact of advanced AI robotics, promoting responsible innovation.
-- **LO-006**: Develop proficiency in simulation environments and real-world robotic platforms for practical experimentation and project development.
+- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
+  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 
-### Target Audience
+## Generate a new site
 
-This book is intended for:
+Generate a new Docusaurus site using the **classic template**.
 
-- Advanced undergraduate and graduate students in Robotics, Computer Science, Electrical Engineering, and Mechanical Engineering.
-- Researchers and academics seeking a comprehensive reference on current trends and foundational aspects of AI robotics.
-- Professionals and engineers transitioning into or working within the fields of AI, robotics, automation, and intelligent systems.
+The classic template will automatically be added to your project after you run the command:
 
-### Prerequisites
+```bash
+npm init docusaurus@latest my-website classic
+```
 
-Readers should possess:
+You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
 
-- A solid understanding of linear algebra, calculus, and differential equations.
-- Proficiency in at least one programming language, preferably Python or C++.
-- Familiarity with basic data structures and algorithms.
-- An introductory knowledge of control systems and classical robotics concepts is beneficial but not strictly required, as foundational topics are reviewed.
+The command also installs all necessary dependencies you need to run Docusaurus.
 
-### Book Structure
+## Start your site
 
-The textbook is organized into four comprehensive modules:
+Run the development server:
 
-1. **Module 1: The Robotic Nervous System (ROS 2)** - Introduces the Robot Operating System (ROS 2), the middleware framework that serves as the communication backbone for modern robotic systems.
+```bash
+cd my-website
+npm run start
+```
 
-2. **Module 2: The Digital Twin (Gazebo & Unity)** - Explores the creation and utilization of digital twin environments for robotic systems, focusing on simulation as a critical component of the robotics development lifecycle.
+The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
 
-3. **Module 3: The AI-Robot Brain (NVIDIA Isaac)** - Focuses on integrating artificial intelligence capabilities into robotic systems using NVIDIA's Isaac ecosystem, covering deep learning and reinforcement learning applications.
+The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
 
-4. **Module 4: Vision-Language-Action (VLA)** - Explores the integration of vision, language, and action systems to create embodied AI agents capable of understanding natural language commands and executing complex robotic tasks.
-
-### How to Use This Textbook
-
-Each module contains several chapters with theoretical foundations, practical applications, hands-on exercises, and programming assignments. We recommend following the modules sequentially as each builds upon the previous ones. The textbook adopts a blended pedagogical approach with:
-
-- **Theoretical Foundations**: Each chapter begins with clear explanations of core theories and mathematical models.
-- **Practical Application**: Concepts are reinforced through numerous examples, case studies, and real-world scenarios.
-- **Hands-on Learning**: Programming exercises and mini-projects using popular robotics frameworks are integrated throughout.
-- **Progressive Difficulty**: Content is structured to build knowledge incrementally, moving from fundamental principles to advanced applications.
-
-### Capstone Project
-
-The textbook concludes with a comprehensive capstone project that requires students to design, implement, and evaluate an intelligent robotic system for a complex, real-world challenge, synthesizing all learned material from the previous modules.
+Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
