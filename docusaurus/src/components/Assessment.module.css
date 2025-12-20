@@ -1,0 +1,122 @@
+.container {
+  border: 2px solid #27ae60;
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #f0fff4;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #27ae60;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.sectionTitle {
+  margin: 16px 0 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.objectivesList {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.objectiveItem {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.objectiveItem::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.rubricGrid {
+  margin-top: 12px;
+}
+
+.rubricItem {
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid #d5f5e3;
+  border-radius: 4px;
+  background-color: #e8f6f3;
+}
+
+.criterion {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1e8449;
+}
+
+.scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.scoreLabel {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin-bottom: 2px;
+}
+
+.scoreValue {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.content {
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scores {
+    flex-direction: column;
+  }
+
+  .icon {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+}

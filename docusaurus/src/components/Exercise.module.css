@@ -1,0 +1,94 @@
+.exercise-container {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.content {
+  padding-left: 28px;
+}
+
+.lab {
+  border-color: #4a90e2;
+  background-color: #f0f7ff;
+}
+
+.lab .header {
+  border-bottom-color: #4a90e2;
+}
+
+.assessment {
+  border-color: #50c878;
+  background-color: #f0fff5;
+}
+
+.assessment .header {
+  border-bottom-color: #50c878;
+}
+
+.checklist {
+  border-color: #ff6b6b;
+  background-color: #fff0f0;
+}
+
+.checklist .header {
+  border-bottom-color: #ff6b6b;
+}
+
+.exercise {
+  border-color: #ffb142;
+  background-color: #fff8f0;
+}
+
+.exercise .header {
+  border-bottom-color: #ffb142;
+}
+
+.difficulty-easy {
+  border-left: 4px solid #48dbfb;
+}
+
+.difficulty-medium {
+  border-left: 4px solid #f39c12;
+}
+
+.difficulty-hard {
+  border-left: 4px solid #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icon {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+
+  .content {
+    padding-left: 0;
+  }
+}
