@@ -1,0 +1,182 @@
+# API Contracts: Integrated RAG Chatbot
+
+## 1. Backend API Endpoints
+
+### 1.1 Query Endpoint (General Questions)
+**Endpoint**: `POST /api/chat/query`
+
+**Description**: Process general questions about the textbook content
+
+**Request**:
+```json
+{
+  "query": "string, required - User's question about the textbook",
+  "session_id": "string, required - Session identifier for rate limiting",
+  "include_citations": "boolean, optional - Whether to include citations (default: true)"
+}
+```
+
+**Response** (200 OK):
+```json
+{
+  "answer": "string - Generated answer to the query",
+  "citations": [
+    {
+      "chapter": "string - Chapter name/number",
+      "section": "string - Section name/number",
+      "page_url": "string - URL to the referenced page",
+      "text_snippet": "string - Short snippet of the cited text",
+      "confidence": "number - Confidence score (0.0-1.0)"
+    }
+  ],
+  "sources": [
+    {
+      "content": "string - Content of the source chunk",
+      "metadata": {
+        "chapter": "string",
+        "section": "string",
+        "page_url": "string",
+        "source_file": "string",
+        "token_count": "integer",
+        "position": "integer"
+      },
+      "relevance_score": "number - How relevant this chunk was to the query (0.0-1.0)"
+    }
+  ],
+  "response_time": "number - Time taken to generate response (ms)"
+}
+```
+
+**Error Responses**:
+- 400: Invalid request format
+- 429: Rate limit exceeded
+- 500: Internal server error
+
+### 1.2 Query Selection Endpoint (Selected Text Questions)
+**Endpoint**: `POST /api/chat/query-selection`
+
+**Description**: Process questions specifically about selected text
+
+**Request**:
+```json
+{
+  "query": "string, required - User's question about the selected text",
+  "selected_text": "string, required - Text that was selected by the user",
+  "session_id": "string, required - Session identifier for rate limiting",
+  "include_citations": "boolean, optional - Whether to include citations (default: true)"
+}
+```
+
+**Response**: Same as Query Endpoint (200 OK)
+
+**Error Responses**:
+- 400: Invalid request format
+- 429: Rate limit exceeded
+- 500: Internal server error
+
+### 1.3 Health Check Endpoint
+**Endpoint**: `GET /api/health`
+
+**Description**: Check the health status of the backend service
+
+**Response** (200 OK):
+```json
+{
+  "status": "string - Health status ('healthy')",
+  "timestamp": "string - ISO 8601 timestamp",
+  "services": {
+    "qdrant": "string - Qdrant connection status",
+    "gemini": "string - Gemini API connection status"
+  }
+}
+```
+
+**Error Responses**:
+- 503: Service unavailable
+
+## 2. Frontend Widget API
+
+### 2.1 Initialize Widget
+**Method**: `window.ChatWidget.init(config)`
+
+**Description**: Initialize the chat widget with configuration
+
+**Parameters**:
+```javascript
+{
+  "backendUrl": "string, required - URL to the backend API",
+  "apiKey": "string, optional - API key if required",
+  "theme": "string, optional - 'light' or 'dark' (default: 'light')",
+  "position": "string, optional - 'left' or 'right' (default: 'right')"
+}
+```
+
+### 2.2 Open Chat
+**Method**: `window.ChatWidget.open()`
+
+**Description**: Open the chat widget interface
+
+### 2.3 Close Chat
+**Method**: `window.ChatWidget.close()`
+
+**Description**: Close the chat widget interface
+
+## 3. Ingestion Pipeline API
+
+### 3.1 Ingest Document Endpoint
+**Endpoint**: `POST /api/ingest/documents`
+
+**Description**: Process and store textbook documents in vector database
+
+**Request**:
+```json
+{
+  "source_path": "string, required - Path to source documents",
+  "chunk_size": "integer, optional - Size of text chunks (default: 500)",
+  "overlap": "integer, optional - Overlap between chunks (default: 50)"
+}
+```
+
+**Response** (200 OK):
+```json
+{
+  "status": "string - Processing status",
+  "chunks_processed": "integer - Number of chunks created",
+  "time_taken": "number - Time taken in seconds",
+  "metadata": {
+    "source_path": "string",
+    "chunk_size": "integer",
+    "overlap": "integer"
+  }
+}
+```
+
+## 4. Rate Limiting Schema
+
+### 4.1 Rate Limit Headers
+All API responses include these headers:
+```
+X-RateLimit-Limit: 10          # Request limit per window
+X-RateLimit-Remaining: 7      # Remaining requests in current window
+X-RateLimit-Reset: 1234567890 # Unix timestamp for window reset
+```
+
+## 5. Error Response Format
+
+All error responses follow this format:
+```json
+{
+  "error": {
+    "code": "string - Error code",
+    "message": "string - Human-readable error message",
+    "details": "object - Additional error details (optional)"
+  }
+}
+```
+
+### Common Error Codes:
+- `INVALID_REQUEST`: Request validation failed
+- `RATE_LIMIT_EXCEEDED`: Rate limit exceeded
+- `VECTOR_DB_ERROR`: Error connecting to or querying vector database
+- `AI_SERVICE_ERROR`: Error with AI service (Gemini)
+- `INTERNAL_ERROR`: Internal server error

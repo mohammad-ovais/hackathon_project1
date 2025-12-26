@@ -133,9 +133,9 @@ The journey of learning in physical AI robotics is just beginning. May this text
 
 <Citation
   id="future-robotics-2024"
-  authors="Johnson, S., et al.",
+  authors="Johnson, S., et al."
   year="2024"
-  title="The Future of Physical AI: Challenges and Opportunities in Embodied Intelligence",
+  title="The Future of Physical AI: Challenges and Opportunities in Embodied Intelligence"
   source="Nature Machine Intelligence"
   url="https://doi.org/10.1038/s42256-024-00750-1"
 >
@@ -144,9 +144,9 @@ The journey of learning in physical AI robotics is just beginning. May this text
 
 <Citation
   id="ethics-robotics-2024"
-  authors="Rodriguez, M. and Chen, L.",
+  authors="Rodriguez, M. and Chen, L."
   year="2024"
-  title="Ethical Considerations in AI Robotics: A Framework for Responsible Development",
+  title="Ethical Considerations in AI Robotics: A Framework for Responsible Development"
   source="AI and Society"
   url="https://doi.org/10.1007/s00146-024-01890-7"
 >

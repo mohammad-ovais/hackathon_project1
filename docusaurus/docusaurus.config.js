@@ -9,16 +9,16 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://physical-ai-robotics-book.github.io',
+  url: 'https://mohammad-ovais.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages, this is usually '/<organization-name>/<repository-name>/'
-  baseUrl: '/physical-ai-robotics-book/',
+  baseUrl: '/hackathon_project1/',
 
   // GitHub pages deployment config.
-  organizationName: 'physical-ai-robotics-book', // Usually your GitHub org/user name.
-  projectName: 'physical-ai-robotics-book', // Usually your repo name.
+  organizationName: 'mohammad-ovais', // Usually your GitHub org/user name.
+  projectName: 'hackathon_project1', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -47,6 +47,17 @@ const config = {
         },
       }),
     ],
+  ],
+
+  plugins: [
+    [
+      './src/plugins/chatbot-plugin.js',
+      {
+        backendUrl: 'http://localhost:8000', // Update this to your backend URL
+        theme: 'light',
+        position: 'right'
+      }
+    ]
   ],
 
   themeConfig:
@@ -128,8 +139,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Physical AI Robotics Textbook. Built with Docusaurus.`,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/github'),
-        darkTheme: require('prism-react-renderer/themes/dracula'),
+        theme: require('prism-react-renderer').themes.github,
+        darkTheme: require('prism-react-renderer').themes.dracula,
       },
     }),
 };

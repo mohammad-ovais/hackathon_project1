@@ -212,6 +212,8 @@ See `.specify/memory/constitution.md` for code quality, testing, performance, se
 ## Active Technologies
 - JavaScript/TypeScript, Node.js 18+ + Docusaurus v3, React, Node.js, GitHub Pages (001-physical-ai-robotics-book)
 - Git repository, static site generation (001-physical-ai-robotics-book)
+- Python 3.11 (backend), JavaScript/TypeScript (frontend) + FastAPI, Gemini API, Qdrant Cloud, Docusaurus, React (002-integrated-rag-chatbot)
+- Qdrant Cloud (vector database), in-memory session storage (002-integrated-rag-chatbot)
 
 ## Recent Changes
 - 001-physical-ai-robotics-book: Added JavaScript/TypeScript, Node.js 18+ + Docusaurus v3, React, Node.js, GitHub Pages

@@ -277,9 +277,9 @@ The capstone assessment evaluates students' ability to synthesize knowledge from
 
 <Citation
   id="capstone-assessment-robotics-2023"
-  authors="Brown, A. and Davis, K.",
+  authors="Brown, A. and Davis, K."
   year="2023"
-  title="Assessment Strategies for Capstone Robotics Projects: Integration and Synthesis Evaluation",
+  title="Assessment Strategies for Capstone Robotics Projects: Integration and Synthesis Evaluation"
   source="International Journal of Engineering Education"
   url="https://example.com/capstone-assessment-robotics"
 >
@@ -288,9 +288,9 @@ The capstone assessment evaluates students' ability to synthesize knowledge from
 
 <Citation
   id="robotics-education-assessment-2022"
-  authors="Wilson, R. and Lee, S.",
+  authors="Wilson, R. and Lee, S."
   year="2022"
-  title="Evaluating Student Learning in Advanced Robotics Courses: A Multi-Component Assessment Approach",
+  title="Evaluating Student Learning in Advanced Robotics Courses: A Multi-Component Assessment Approach"
   source="Journal of Engineering Education"
   url="https://example.com/robotics-education-assessment"
 >

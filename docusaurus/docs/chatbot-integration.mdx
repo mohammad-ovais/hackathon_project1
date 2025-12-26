@@ -1,0 +1,66 @@
+---
+sidebar_position: 999
+title: Chatbot Integration
+---
+
+# RAG Chatbot Integration
+
+This page describes how the RAG (Retrieval-Augmented Generation) chatbot is integrated into the Physical AI & Humanoid Robotics textbook website.
+
+## Overview
+
+The chatbot allows readers to ask questions about the textbook content and receive accurate answers with citations to specific chapters and sections. It uses a combination of vector search and generative AI to provide contextually relevant responses.
+
+## Features
+
+- **Natural Language Queries**: Ask questions in plain English about the textbook content
+- **Cited Responses**: All answers include citations to specific chapters, sections, and pages
+- **Selected Text Queries**: Ask questions about specific text passages you've highlighted
+- **Real-time Responses**: Answers typically returned in under 3 seconds
+- **Persistent Session**: Conversation history maintained during your visit
+
+## How It Works
+
+The chatbot uses a Retrieval-Augmented Generation (RAG) approach:
+
+1. Your question is converted to a numerical representation (embedding)
+2. This embedding is compared against embeddings of textbook content
+3. The most relevant text passages are retrieved
+4. A generative AI model creates a response based on these passages
+5. Citations to the original sources are included
+
+## Privacy Notice
+
+- No personal data is collected or stored
+- Query history is kept only in your browser's memory during your session
+- No tracking or analytics on your questions
+
+## Technical Details
+
+The chatbot is implemented as a Docusaurus plugin with:
+
+- A React-based frontend widget
+- A FastAPI backend service
+- Qdrant vector database for content indexing
+- Google's Gemini AI for response generation
+
+## Troubleshooting
+
+**Chatbot not appearing?**
+- Make sure JavaScript is enabled in your browser
+- Try refreshing the page
+- Clear your browser cache if problems persist
+
+**Slow responses?**
+- The service may be experiencing high load
+- Try again in a few moments
+- Responses may be slower during peak hours
+
+**No relevant answers?**
+- Try rephrasing your question
+- Be as specific as possible
+- Use terminology from the textbook when possible
+
+## Support
+
+If you encounter issues with the chatbot, please report them via the GitHub repository for this textbook.

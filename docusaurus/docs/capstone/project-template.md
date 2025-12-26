@@ -390,9 +390,9 @@ A successful capstone project will demonstrate:
 
 <Citation
   id="robotics-capstone-education-2023"
-  authors="Smith, J. and Johnson, M.",
+  authors="Smith, J. and Johnson, M."
   year="2023"
-  title="Effective Capstone Projects in Robotics Education: Integration and Synthesis Approaches",
+  title="Effective Capstone Projects in Robotics Education: Integration and Synthesis Approaches"
   source="Journal of Robotics Education"
   url="https://example.com/robotics-capstone-education"
 >
@@ -401,9 +401,9 @@ A successful capstone project will demonstrate:
 
 <Citation
   id="integrated-robotics-systems-2023"
-  authors="Chen, L. and Rodriguez, P.",
+  authors="Chen, L. and Rodriguez, P."
   year="2023"
-  title="Design and Implementation of Integrated Robotics Systems: A Modular Approach",
+  title="Design and Implementation of Integrated Robotics Systems: A Modular Approach"
   source="IEEE Transactions on Robotics Education"
   url="https://example.com/integrated-robotics-systems"
 >
