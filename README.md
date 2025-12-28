@@ -1,3 +1,13 @@
+---
+title: physical-ai-backend 
+emoji: 🤖
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_file: backend/Dockerfile
+pinned: false
+---
+
 # Integrated RAG Chatbot for Physical AI & Humanoid Robotics Textbook
 
 This project implements an integrated RAG (Retrieval-Augmented Generation) chatbot that allows users to ask questions about the Physical AI & Humanoid Robotics textbook content. The chatbot provides accurate answers with citations to specific parts of the textbook.
