@@ -2,9 +2,18 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
+from pydantic import BaseModel
+from typing import Optional, List
 
 # Load environment variables
 load_dotenv()
+
+# ChunkMetadata class define
+class ChunkMetadata(BaseModel):
+    source: str
+    page: Optional[int] = None
+    chunk_id: Optional[str] = None
+    metadata: Optional[dict] = None
 
 # Import API routers
 from src.api import create_api_router

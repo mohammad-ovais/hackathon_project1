@@ -43,5 +43,3 @@ class QueryResponse(BaseModel):
     response_time: float
 
 
-# Forward reference resolution
-SourceChunk.update_forward_refs()

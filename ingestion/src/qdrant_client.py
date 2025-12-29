@@ -15,16 +15,15 @@ class QdrantService:
     """
 
     def __init__(self):
-        # Initialize Qdrant client with connection pooling settings
-        self.client = QdrantClient(
-            url=os.getenv("QDRANT_URL"),
-            api_key=os.getenv("QDRANT_API_KEY"),
-            # Connection pooling and performance settings
-            timeout=30,  # 30 second timeout
-            retry_on_timeout=True,
-            http2=True,  # Enable HTTP/2 for better performance
-            # Additional connection settings for pooling
-            **{
+        # Initialize Qdrant client with connection pooling settings in a backward-compatible way
+        qdrant_kwargs = {
+            "url": os.getenv("QDRANT_URL"),
+            "api_key": os.getenv("QDRANT_API_KEY"),
+            "timeout": 30,  # 30 second timeout
+        }
+
+        if hasattr(QdrantClient, 'grpc_options'):
+            qdrant_kwargs.update({
                 "grpc_options": {
                     "grpc.keepalive_time_ms": 30000,
                     "grpc.keepalive_timeout_ms": 5000,
@@ -32,8 +31,14 @@ class QdrantService:
                     "grpc.http2.min_time_between_pings_ms": 10000,
                     "grpc.http2.min_ping_interval_without_data_ms": 300000,
                 }
-            } if hasattr(QdrantClient, 'grpc_options') else {}
-        )
+            })
+
+        try:
+            qdrant_kwargs["http2"] = True
+            self.client = QdrantClient(**qdrant_kwargs)
+        except TypeError:
+            qdrant_kwargs.pop("http2", None)
+            self.client = QdrantClient(**qdrant_kwargs)
         self.collection_name = os.getenv("QDRANT_COLLECTION_NAME", "textbook_chunks")
 
     def create_collection(self, vector_size: int = 768):

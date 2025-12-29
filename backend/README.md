@@ -1,5 +1,5 @@
 ---
-title: physical-ai-backend
+title: Physical AI RAG Chatbot API
 emoji: 🤖
 colorFrom: blue
 colorTo: purple

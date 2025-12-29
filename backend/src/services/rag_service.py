@@ -27,31 +27,19 @@ class RAGService:
     """
 
     def __init__(self):
-        # Initialize Qdrant client with connection pooling settings
+        #Initialize Qdrant client
         self.qdrant_client = QdrantClient(
             url=os.getenv("QDRANT_URL"),
             api_key=os.getenv("QDRANT_API_KEY"),
-            # Connection pooling and performance settings
-            timeout=30,  # 30 second timeout
-            retry_on_timeout=True,
-            http2=True,  # Enable HTTP/2 for better performance
-            # Additional connection settings for pooling
-            **{
-                "grpc_options": {
-                    "grpc.keepalive_time_ms": 30000,
-                    "grpc.keepalive_timeout_ms": 5000,
-                    "grpc.http2.max_pings_without_data": 0,
-                    "grpc.http2.min_time_between_pings_ms": 10000,
-                    "grpc.http2.min_ping_interval_without_data_ms": 300000,
-                }
-            } if hasattr(QdrantClient, 'grpc_options') else {}
+         timeout=30
         )
+
         self.collection_name = os.getenv("QDRANT_COLLECTION_NAME", "textbook_chunks")
 
         # Configure Gemini API
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
-            raise ValueError("GEMINI_API_KEY environment variable is required")
+             raise ValueError("GEMINI_API_KEY environment variable is required")
 
         genai.configure(api_key=api_key)
         self.gemini_model = genai.GenerativeModel('gemini-pro')
