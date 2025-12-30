@@ -53,7 +53,7 @@ const config = {
     [
       './src/plugins/chatbot-plugin.js',
       {
-        backendUrl: 'http://localhost:8000', // Update this to your backend URL
+        backendUrl: 'https://ovais123-rag-chatbot.hf.space', // Update this to your backend URL
         theme: 'light',
         position: 'right'
       }
