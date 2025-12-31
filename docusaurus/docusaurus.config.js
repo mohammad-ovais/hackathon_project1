@@ -13,7 +13,15 @@ const config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages, this is usually '/<organization-name>/<repository-name>/'
   baseUrl: '/hackathon_project1/',
-
+  scripts: [
+    {
+      src: '/chat-widget.js',
+      async: true,
+      'data-backend-url': 'https://ovais123-rag-chatbot.hf.space',
+      'data-theme': 'light',
+      'data-position': 'right',
+    },
+  ],
   // GitHub pages deployment config.
   organizationName: 'mohammad-ovais', // Usually your GitHub org/user name.
   projectName: 'hackathon_project1', // Usually your repo name.
