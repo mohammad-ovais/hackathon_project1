@@ -15,7 +15,7 @@ const config = {
   baseUrl: '/hackathon_project1/',
   scripts: [
     {
-      src: '/chat-widget.js',
+      src: '/hackathon_project1/js/chat-widget.js',
       async: true,
       'data-backend-url': 'https://ovais123-rag-chatbot.hf.space',
       'data-theme': 'light',
