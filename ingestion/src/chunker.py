@@ -1,5 +1,4 @@
 import re
-import tiktoken
 from typing import List, Tuple
 from .models import DocumentChunk, ChunkMetadata
 
@@ -12,13 +11,13 @@ class TextChunker:
     def __init__(self, chunk_size: int = 500, overlap: int = 50):
         self.chunk_size = chunk_size
         self.overlap = overlap
-        self.encoder = tiktoken.get_encoding("cl100k_base")  # Good for most text
+        
 
-    def count_tokens(self, text: str) -> int:
+    def estimate_tokens(self, text: str) -> int:
         """
-        Count the number of tokens in a text
+        simple & safe token estimate
         """
-        return len(self.encoder.encode(text))
+        return len(text.split())
 
     def chunk_text(self, text: str, metadata: ChunkMetadata) -> List[DocumentChunk]:
         """
@@ -34,7 +33,7 @@ class TextChunker:
         chunk_start_idx = 0
 
         for i, sentence in enumerate(sentences):
-            sentence_tokens = self.count_tokens(sentence)
+            sentence_tokens = self.estimate_tokens(sentence)
 
             # If adding this sentence would exceed chunk size
             if current_tokens + sentence_tokens > self.chunk_size and current_chunk:
@@ -45,7 +44,7 @@ class TextChunker:
                 # Start a new chunk with overlap
                 overlap_text = self._get_overlap_text(chunks, sentences, i)
                 current_chunk = overlap_text + " " + sentence
-                current_tokens = self.count_tokens(current_chunk)
+                current_tokens = self.estimate_tokens(current_chunk)
                 chunk_start_idx = max(0, len(" ".join(sentences[:i])) - len(overlap_text))
             else:
                 # Add sentence to current chunk
@@ -75,7 +74,7 @@ class TextChunker:
 
         # Go backwards through sentences until we reach the overlap token count
         for i in range(current_idx - 1, max(0, current_idx - 10), -1):  # Look back at most 10 sentences
-            sent_tokens = self.count_tokens(sentences[i])
+            sent_tokens = self.estimate_tokens(sentences[i])
             if tokens_counted + sent_tokens > self.overlap:
                 break
             overlap_sentences.insert(0, sentences[i])
@@ -93,7 +92,7 @@ class TextChunker:
         return DocumentChunk(
             id=str(uuid4()),
             content=content,
-            metadata=metadata.copy(update={"token_count": self.count_tokens(content), "position": start_idx}),
+            metadata=metadata.copy(update={"token_count": self.estimate_tokens(content), "position": start_idx}),
             created_at=datetime.now()
         )
 

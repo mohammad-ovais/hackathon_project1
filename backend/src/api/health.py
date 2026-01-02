@@ -34,7 +34,7 @@ async def health_check() -> Dict[str, Any]:
         if api_key:
             genai.configure(api_key=api_key)
             # Try a simple model call to verify connection
-            model = genai.GenerativeModel('gemini-pro')
+            model = genai.GenerativeModel('gemini-1.5-pro')
             gemini_status = "healthy"
         else:
             gemini_status = "unhealthy"

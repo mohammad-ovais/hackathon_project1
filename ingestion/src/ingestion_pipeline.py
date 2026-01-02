@@ -79,7 +79,8 @@ class IngestionPipeline:
             # Extract chapter/section info from path
             path_parts = relative_path.split(os.sep)
             chapter = path_parts[-2] if len(path_parts) > 1 else "Introduction"
-            section = os.path.basename(relative_path, os.path.splitext(relative_path)[1])
+            filename = os.path.basename(relative_path)
+            section = os.path.splitext(filename)[0]
 
             chunks_count = self.process_file(file_path, chapter, section, page_url)
             total_chunks += chunks_count
