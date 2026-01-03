@@ -58,7 +58,7 @@ class RAGService:
 
         try:
             response = genai.embed_content(
-                model="models/text-embedding-004",
+                model="/text-embedding-004",
                 content=text,
                 task_type="RETRIEVAL_QUERY"  # Use QUERY for search queries
             )
