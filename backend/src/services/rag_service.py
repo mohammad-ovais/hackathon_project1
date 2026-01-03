@@ -142,7 +142,6 @@ class RAGService:
 
         Answer:
         """
-        model = genai.GenerativeModel("models/gemini-1.5-flash")           
         response = self.gemini_model.generate_content(prompt)
         return response.text
 
