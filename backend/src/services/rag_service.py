@@ -42,7 +42,7 @@ class RAGService:
              raise ValueError("GEMINI_API_KEY environment variable is required")
 
         genai.configure(api_key=api_key)
-        self.gemini_model = genai.GenerativeModel('gemini-1.5-flash-latest')
+        self.gemini_model = genai.GenerativeModel('gemini-2.0-flash')
 
     def generate_embedding(self, text: str) -> List[float]:
         """
@@ -60,7 +60,7 @@ class RAGService:
             response = genai.embed_content(
                 model="models/text-embedding-004",
                 content=text,
-                task_type="RETRIEVAL_QUERY"  # Use QUERY for search queries
+                task_type="retrieval_query"  # Use QUERY for search queries
             )
             embedding = response['embedding']
 
